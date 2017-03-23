@@ -23,7 +23,7 @@ import java.lang.Exception
  * Created by boss1088 on 3/16/17.
  */
 class ShowsAdapter(var shows : List<ShowListEntity>,
-                   val itemClick: OnItemClickListener) :
+                   val itemClick: (ShowListEntity) -> Unit) :
         RecyclerView.Adapter<ShowsAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -39,7 +39,7 @@ class ShowsAdapter(var shows : List<ShowListEntity>,
         return ViewHolder(view, itemClick)
     }
 
-    class ViewHolder(view: View, val itemClick: OnItemClickListener) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View, val itemClick: (ShowListEntity) -> Unit) : RecyclerView.ViewHolder(view) {
 
         private val showName = view.find<TextView>(R.id.showName)
         private val showRating = view.find<TextView>(R.id.showRating)

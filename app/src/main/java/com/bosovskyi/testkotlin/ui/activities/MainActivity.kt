@@ -7,7 +7,6 @@ import android.support.v7.widget.Toolbar
 import com.bosovskyi.testkotlin.R
 import com.bosovskyi.testkotlin.base.BaseActivity
 import com.bosovskyi.testkotlin.domain.commands.PopularShowsCommand
-import com.bosovskyi.testkotlin.domain.model.ShowListEntity
 import com.bosovskyi.testkotlin.ui.adapters.ShowsAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.doAsync
@@ -30,12 +29,8 @@ class MainActivity : BaseActivity() {
         doAsync {
             val result = PopularShowsCommand().execute()
             uiThread {
-                itemsList.adapter = ShowsAdapter(result.shows,
-                        object : ShowsAdapter.OnItemClickListener{
-                            override fun invoke(showEntity: ShowListEntity) {
-                                toast(showEntity.name)
-                            }
-                        })
+                val adapter = ShowsAdapter(result.shows) { toast(it.name) }
+                itemsList.adapter = adapter
                 itemsList.scheduleLayoutAnimation()
             }
         }
