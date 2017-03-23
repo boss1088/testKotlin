@@ -25,7 +25,5 @@ class ShowDataMapper {
         return ShowModel(entity.id, entity.name, generatePosterUrl(entity.poster_path), entity.vote_average.toString())
     }
 
-    fun generatePosterUrl(posterPath: String): String {
-        return "https://image.tmdb.org/t/p/w300$posterPath"
-    }
+    fun generatePosterUrl(posterPath: String) = "https://image.tmdb.org/t/p/w300$posterPath"
 }

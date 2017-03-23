@@ -30,7 +30,7 @@ class ShowsAdapter(var shows : List<ShowListEntity>,
         holder.bindShow(shows[position])
     }
 
-    override fun getItemCount(): Int = shows.size
+    override fun getItemCount() = shows.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.ctx)
@@ -74,9 +74,5 @@ class ShowsAdapter(var shows : List<ShowListEntity>,
                         .into(showCover)
             }
         }
-    }
-
-    interface OnItemClickListener {
-        operator fun invoke(showEntity: ShowListEntity)
     }
 }
