@@ -15,8 +15,9 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/Toolbar" />
 
-    <android.support.v7.widget.RecyclerView
+    <com.bosovskyi.testkotlin.widget.GridRecyclerView
         android:id="@+id/itemsList"
+        android:layoutAnimation="@anim/grid_layout_animation"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

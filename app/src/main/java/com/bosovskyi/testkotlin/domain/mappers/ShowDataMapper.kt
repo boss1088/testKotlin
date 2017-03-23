@@ -22,6 +22,10 @@ class ShowDataMapper {
     }
 
     fun convertShowEntityToDomain(entity: ShowListEntity): ShowModel {
-        return ShowModel(entity.id, entity.name, entity.poster_path, entity.vote_average.toString())
+        return ShowModel(entity.id, entity.name, generatePosterUrl(entity.poster_path), entity.vote_average.toString())
+    }
+
+    fun generatePosterUrl(posterPath: String): String {
+        return "https://image.tmdb.org/t/p/w300$posterPath"
     }
 }
