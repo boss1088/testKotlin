@@ -1,4 +1,4 @@
-package com.bosovskyi.testkotlin.widget
+package com.bosovskyi.testkotlin.ui.widget
 
 import android.content.Context
 import android.support.v7.widget.GridLayoutManager

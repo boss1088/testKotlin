@@ -24,13 +24,13 @@ class MainActivity : BaseActivity() {
                 if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) 3 else 2
         itemsList.layoutManager = GridLayoutManager(this, columnCount)
 
-        getShowsAndUpdateAdapter()
+        getShowsAndUpdateAdapter(savedInstanceState == null)
     }
 
-    fun getShowsAndUpdateAdapter() {
+    fun getShowsAndUpdateAdapter(reload: Boolean) {
         showLoading()
         doAsync {
-            val result = PopularShowsCommand().execute()
+            val result = PopularShowsCommand(reload).execute()
             uiThread {
                 val adapter = ShowsAdapter(result.shows) { toast(it.name) }
                 hideLoading()

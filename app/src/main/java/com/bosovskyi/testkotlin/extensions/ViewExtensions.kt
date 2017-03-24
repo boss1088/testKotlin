@@ -1,4 +1,4 @@
-package com.bosovskyi.testkotlin.ui.utils
+package com.bosovskyi.testkotlin.extensions
 
 import android.content.Context
 import android.view.View

@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.bosovskyi.testkotlin.R
 import com.bosovskyi.testkotlin.domain.model.ShowListEntity
-import com.bosovskyi.testkotlin.ui.utils.ctx
+import com.bosovskyi.testkotlin.extensions.ctx
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestListener

@@ -1,7 +1,7 @@
 package com.bosovskyi.testkotlin.ui
 
 import android.app.Application
-import com.bosovskyi.testkotlin.ui.utils.DelegateExt
+import com.bosovskyi.testkotlin.extensions.DelegateExt
 
 /**
  * Created by boss1088 on 3/23/17.

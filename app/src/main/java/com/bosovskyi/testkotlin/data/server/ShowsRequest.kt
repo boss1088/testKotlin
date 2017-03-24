@@ -1,5 +1,6 @@
-package com.bosovskyi.testkotlin.data
+package com.bosovskyi.testkotlin.data.server
 
+import com.bosovskyi.testkotlin.data.server.ShowsRequestResult
 import com.google.gson.Gson
 import java.net.URL
 
@@ -13,10 +14,10 @@ class ShowsRequest {
         private val API_KEY = "93cf2a3da65fb6b878f0a7b3b1593a32"
         private val URL = "https://api.themoviedb.org/3/tv/popular"
 
-        private val COMPLETE_URL = "$URL?api_key=$API_KEY"
+        private val COMPLETE_URL = "${URL}?api_key=${API_KEY}"
     }
 
-    fun execute(): ShowsRequestResult  {
+    fun execute(): ShowsRequestResult {
         val showsJson = URL(COMPLETE_URL).readText()
         return Gson().fromJson(showsJson, ShowsRequestResult::class.java)
     }

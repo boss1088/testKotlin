@@ -17,7 +17,7 @@
 
     <include layout="@layout/loading"/>
 
-    <com.bosovskyi.testkotlin.widget.GridRecyclerView
+    <com.bosovskyi.testkotlin.ui.widget.GridRecyclerView
         android:id="@+id/itemsList"
         android:layoutAnimation="@anim/grid_layout_animation"
         android:layout_width="match_parent"

@@ -12,4 +12,4 @@ data class ShowsList(val page: Int, val totalPages: Int, val shows: List<ShowLis
     operator fun get(position: Int) = shows[position]
 }
 
-data class ShowListEntity(val id: Int, val name: String, val posterUrl: String, val averageRating: String)
+data class ShowListEntity(val id: Long, val name: String, val posterUrl: String, val averageRating: String)
